@@ -12,7 +12,6 @@ const cursos = [
         cupos: 80,
         descripcion: "Aprendé componentes, props, estado y eventos.",
     },
-
     {
         id: 2,
         titulo: "Node.js práctico",
@@ -22,7 +21,6 @@ const cursos = [
         cupos: 60,
         descripcion: "Creá APIs simples usando Express y JavaScript.",
     },
-    
     {
         id: 3,
         titulo: "MongoDB para proyectos web",
@@ -32,7 +30,6 @@ const cursos = [
         cupos: 45,
         descripcion: "Modelá y consultá datos para aplicaciones reales.",
     },
-
     {
         id: 4,
         titulo: "Diseño web con Bootstrap",
@@ -45,21 +42,41 @@ const cursos = [
 ];
 
 function Courses() {
+
     const agregarCurso = useCourseStore(
         (state) => state.agregarCurso
     );
 
     return (
-    <Container><h2 className="mb-4"
-        style={{
-            color: "#149eca",
-            fontWeight: "700"
-        }} >Cursos disponibles</h2>
-        <Row>{cursos.map((curso) => (
-                <Col md={6} lg={3} key={curso.id} className="mb-4"><CourseCard curso={curso}agregarCurso={agregarCurso}/></Col>
+        <Container>
+            <h2
+                className="mb-4"
+                style={{
+                    color: "#149eca",
+                    fontWeight: "700",
+                }}
+            >
+                Cursos disponibles
+            </h2>
+
+            <Row>
+
+                {cursos.map((curso) => (
+                    <Col
+                        md={6}
+                        lg={3}
+                        key={curso.id}
+                        className="mb-4"
+                    >
+                        <CourseCard
+                            curso={curso}
+                            agregarCurso={agregarCurso}
+                        />
+                    </Col>
                 ))}
-        </Row>
-    </Container>
+
+            </Row>
+        </Container>
     );
 }
 

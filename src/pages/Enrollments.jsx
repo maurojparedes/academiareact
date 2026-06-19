@@ -25,7 +25,6 @@ function Enrollments() {
         <Container>
 
             <div className="d-flex justify-content-between align-items-center mb-3">
-
                 <h2>Mis inscripciones</h2>
 
                 {inscripciones.length > 0 && (
